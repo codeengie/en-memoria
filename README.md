@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EnMemoria
 
-## Getting Started
+## Overview
+EnMemoria is a customizable digital photo frame application built with Next.js, designed to run on a Raspberry Pi 5 with a touch screen. This application allows users to display a rotating gallery of images stored locally on the Raspberry Pi, transforming it into a beautiful and interactive photo display.
 
-First, run the development server:
+## Features
++ **Dynamic Image Display**: Automatically cycles through images stored in a specified folder on the Raspberry Pi.
++ **Responsive Design**: Optimized for screens of all sizes to ensure high-quality image rendering.
++ **Customizable Settings**: Easily modify display intervals and other parameters to suit your preferences.
++ **Local Storage**: Access and display images directly from the Raspberry Pi's file system for quick and effective loading.
++ **Docker Support**: Simplified deployment using Docker, allowing for consistent environments and easy updates.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Installation
+To set up EnMemoria app on your Raspberry Pi, follow these steps:
+1. Clone the Repository:
+    ```bash
+    $ git clone https://gitlab.com/yourusername/nameofyourrepo.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    $ cd en-memoria
+    ```
+2. Build and Run with Docker:
+   Ensure your have Docker installed on your Raspberry Pi. Then, run:
+    ```bash
+    $ docker-compose up --build
+    ```
+3. Access the Application
+   Open your web browser and navigate to `http://<your-pi-ip>:3000` to view your photo frame
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
+Simply place your images in the designated folder (configured in `docker-compose.yml`), and the application will automatically load and display them. You can customize the settings within the code to adjust how often images change or add additional features.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Developer
++ **Name**: Cesar Villanueva Jr
++ **Website**: [Ardent Forms](https://ardentforms.com)
++ **Email**: [cesar.villanueva@ardentforms.com](mailto:cesar.villanueva@ardentforms.com)
 
-## Learn More
+## Privacy
+This project is intended for personal use and is designed to run locally on your Raspberry Pi. All images are stored locally, ensuring your privacy and security.
 
-To learn more about Next.js, take a look at the following resources:
+## License and Usage Restrictions
+**IMPORTANT: This is a private project and is not open for public use, distribution, or modification.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copyright(c) Cesar Villanueva Jr 2024
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All rights reserved. This project and its source code are the exclusive property of Cesar Villanueva. No part of this project, including but not limited to the source code, documentation, and associated files, may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the owner, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
 
-## Deploy on Vercel
+Unauthorized use, reproduction, or distribution of this project or any portion of it may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For permission requests or further information, please contact [Cesar Villanueva Jr](cesar.villanueva@ardentforms.com).
