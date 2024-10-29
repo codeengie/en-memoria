@@ -1,0 +1,62 @@
+.photo-frame {
+	background-color: #0d0d0d;
+	height: 720px;
+	overflow: hidden;
+	position: relative;
+	width: 720px;
+
+	&__image {
+		object-fit: contain; // Next.js 13 has deprecated setting this prop in the Image component
+	}
+}
+
+.widget {
+	bottom: 26px;
+	display: grid;
+	grid-template: {
+		areas:
+		'date date'
+		'temperature icon'
+		'location time';
+		//columns: 50%;
+		rows: auto;
+	}
+	left: 26px;
+	position: absolute;
+
+	&__date,
+	&__location,
+	&__temperature,
+	&__time {
+		text-shadow: 2px 2px 2px #000000;
+	}
+
+	&__date,
+	&__location,
+	&__time {
+		font-size: 16px;
+	}
+
+	&__date {
+		grid-area: date;
+	}
+
+	&__icon {
+		align-self: center;
+		grid-area: icon;
+		justify-self: center;
+	}
+
+	&__location {
+		grid-area: location;
+	}
+
+	&__temperature {
+		font-size: 32px;
+		grid-area: temperature;
+	}
+
+	&__time {
+		grid-area: time;
+	}
+}
