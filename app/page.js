@@ -5,7 +5,9 @@ const localPhotos = [
 	'/images/test_000.jpg',
 	'/images/test_001.jpg',
 	'/images/test_002.jpg',
-	'/images/test_003.jpg'
+	'/images/test_003.jpg',
+	'/images/test_004.jpg',
+	'/images/test_005.jpg'
 ];
 
 export default function Home() {
