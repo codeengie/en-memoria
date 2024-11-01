@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import DateDisplay from '@/components/date-display/DateDisplay';
+import ClockDisplay from '@/components/clock-display/ClockDisplay';
 
 const PhotoFrame = ({ photos }) => {
 	const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -60,12 +61,7 @@ const PhotoFrame = ({ photos }) => {
 					width={28}
 				/>
 				<div className={styles.widget__location}>Compton</div>
-				<time
-					className={styles.widget__time}
-					dateTime="2024-10-28T19:30:00"
-				>
-					7:30 PM
-				</time>
+				<ClockDisplay className={styles.widget__time} />
 			</div>
 		</div>
 	);
