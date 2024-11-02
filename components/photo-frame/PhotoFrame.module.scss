@@ -6,7 +6,7 @@
 	width: 720px;
 
 	&__image {
-		object-fit: contain; // Next.js 13 has deprecated setting this prop in the Image component
+		object-fit: cover; // Next.js 13 has deprecated setting this prop in the Image component
 	}
 }
 
@@ -58,6 +58,10 @@
 				align-items: center;
 				display: flex;
 				justify-content: center;
+
+				img {
+					filter: drop-shadow(2px 2px 2px #000000);
+				}
 			}
 		}
 	}
