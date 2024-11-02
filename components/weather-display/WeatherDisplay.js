@@ -66,9 +66,9 @@ const WeatherDisplay = ({ ...props }) => {
 			<div>
 				<Image
 					alt={`A ${weatherIconMap[icon]} weather icon`}
-					height={28}
+					height={38}
 					src={`/icons/weather/${weatherIconMap[icon]}.svg`}
-					width={28}
+					width={38}
 				/>
 			</div>
 		</div>
