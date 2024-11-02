@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="sunny_day" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fac610;
+      }
+
+      .cls-2 {
+        fill: #fdd403;
+      }
+    </style>
+  </defs>
+  <circle id="sun" class="cls-2" cx="256" cy="256" r="155"/>
+  <path id="shadow" class="cls-1" d="M136.48,256c0-79.6,60.01-145.18,137.26-153.98-5.82-.66-11.74-1.02-17.74-1.02-85.6,0-155,69.4-155,155s69.4,155,155,155c6,0,11.92-.35,17.74-1.02-77.25-8.8-137.26-74.38-137.26-153.98Z"/>
+  <g id="rays_long">
+    <rect class="cls-2" x="243" y="26.9" width="26" height="46" rx="12" ry="12"/>
+    <rect class="cls-2" x="97.27" y="87.27" width="26" height="46" rx="12" ry="12" transform="translate(-45.67 110.27) rotate(-45)"/>
+    <rect class="cls-2" x="36.9" y="233" width="26" height="46" rx="12" ry="12" transform="translate(-206.1 305.9) rotate(-90)"/>
+    <rect class="cls-2" x="97.27" y="378.73" width="26" height="46" rx="12" ry="12" transform="translate(-95.83 763.77) rotate(-135)"/>
+    <rect class="cls-2" x="243" y="439.1" width="26" height="46" rx="12" ry="12" transform="translate(512 924.19) rotate(-180)"/>
+    <rect class="cls-2" x="388.73" y="378.73" width="26" height="46" rx="12" ry="12" transform="translate(969.87 401.73) rotate(135)"/>
+    <rect class="cls-2" x="449.1" y="233" width="26" height="46" rx="12" ry="12" transform="translate(718.1 -206.1) rotate(90)"/>
+    <rect class="cls-2" x="388.73" y="87.27" width="26" height="46" rx="12" ry="12" transform="translate(195.64 -251.77) rotate(45)"/>
+  </g>
+  <g id="rays_short">
+    <circle class="cls-2" cx="180.96" cy="74.83" r="13"/>
+    <circle class="cls-2" cx="74.83" cy="180.96" r="13"/>
+    <circle class="cls-2" cx="74.83" cy="331.04" r="13"/>
+    <circle class="cls-2" cx="180.96" cy="437.17" r="13"/>
+    <circle class="cls-2" cx="331.04" cy="437.17" r="13"/>
+    <circle class="cls-2" cx="437.17" cy="331.04" r="13"/>
+    <circle class="cls-2" cx="437.17" cy="180.96" r="13"/>
+    <circle class="cls-2" cx="331.04" cy="74.83" r="13"/>
+  </g>
+</svg>

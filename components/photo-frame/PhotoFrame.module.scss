@@ -16,7 +16,7 @@
 	grid-template: {
 		areas:
 		'date date'
-		'temperature icon'
+		'weather weather'
 		'location time';
 		//columns: 50%;
 		rows: auto;
@@ -26,7 +26,7 @@
 
 	&__date,
 	&__location,
-	&__temperature,
+	&__weather,
 	&__time {
 		text-shadow: 2px 2px 2px #000000;
 	}
@@ -41,19 +41,25 @@
 		grid-area: date;
 	}
 
-	&__icon {
-		align-self: center;
-		grid-area: icon;
-		justify-self: center;
-	}
-
 	&__location {
 		grid-area: location;
 	}
 
-	&__temperature {
+	&__weather {
+		display: flex;
 		font-size: 32px;
-		grid-area: temperature;
+		grid-area: weather;
+
+		// @todo This is janky, do a proper fix
+		> div {
+			flex: 1 1 auto;
+
+			+ div {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+			}
+		}
 	}
 
 	&__time {

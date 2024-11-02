@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import DateDisplay from '@/components/date-display/DateDisplay';
 import ClockDisplay from '@/components/clock-display/ClockDisplay';
+import WeatherDisplay from '@/components/weather-display/WeatherDisplay';
 
 const PhotoFrame = ({ photos }) => {
 	const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -52,14 +53,7 @@ const PhotoFrame = ({ photos }) => {
 			</AnimatePresence>
 			<div className={styles.widget}>
 				<DateDisplay className={styles.widget__date} />
-				<div className={styles.widget__temperature}>76&deg;c</div>
-				<Image
-					alt="Sunny day icon"
-					className={styles.widget__icon}
-					height={28}
-					src="/sunny.svg"
-					width={28}
-				/>
+				<WeatherDisplay className={styles.widget__weather} />
 				<div className={styles.widget__location}>Compton</div>
 				<ClockDisplay className={styles.widget__time} />
 			</div>
