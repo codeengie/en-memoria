@@ -41,6 +41,3 @@ next-env.d.ts
 
 # editor
 .idea
-
-# temp
-/public/images
