@@ -64,12 +64,14 @@ const WeatherDisplay = ({ ...props }) => {
 		<div {...props}>
 			<div>{temp}</div>
 			<div>
-				<Image
-					alt={`A ${weatherIconMap[icon]} weather icon`}
-					height={38}
-					src={`/icons/weather/${weatherIconMap[icon]}.svg`}
-					width={38}
-				/>
+				{icon && (
+					<Image
+						alt={`A ${weatherIconMap[icon]} weather icon`}
+						height={38}
+						src={`/icons/weather/${weatherIconMap[icon]}.svg`}
+						width={38}
+					/>
+				)}
 			</div>
 		</div>
 	);
