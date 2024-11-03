@@ -1,6 +1,6 @@
 import fs from 'fs';
-import path from 'path';
 
+// Reads a directory in order to generate a list of photos
 export const GET = async (req) => {
 	try {
 		const photoDirectory = process.env.PHOTO_DIRECTORY;
