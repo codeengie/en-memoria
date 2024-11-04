@@ -41,3 +41,11 @@ next-env.d.ts
 
 # editor
 .idea
+
+# docker
+*.log
+*.pid
+docker-volumes/
+docker-compose.override.yml
+.docker/
+*.tmp
