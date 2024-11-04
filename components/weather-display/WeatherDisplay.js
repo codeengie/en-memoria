@@ -43,13 +43,12 @@ const WeatherDisplay = ({ ...props }) => {
 
 	useEffect(() => {
 		const fetchTemp = async () => {
-			// @todo Replace hardcoded values
-			const latitude = 33.8959;
-			const longitude = -118.2201;
+			const latitude = process.env.NEXT_PUBLIC_API_LOCATION_LATITUDE;
+			const longitude = process.env.NEXT_PUBLIC_API_LOCATION_LONGITUDE;
 
 			const temp = await getWeather(latitude, longitude);
 
-			if (temp !== null) {
+			if (temp) {
 				setTemp(
 					`${Math.round(temp.currentTemp)}${temp.currentUnit.toLowerCase()}`
 				);
@@ -64,14 +63,13 @@ const WeatherDisplay = ({ ...props }) => {
 		<div {...props}>
 			<div>{temp}</div>
 			<div>
-				{icon && (
-					<Image
-						alt={`A ${weatherIconMap[icon]} weather icon`}
-						height={38}
-						src={`/icons/weather/${weatherIconMap[icon]}.svg`}
-						width={38}
-					/>
-				)}
+				{/*The conditional I added is causing this not to render, @todo Fix*/}
+				<Image
+					alt={`A ${weatherIconMap[icon]} weather icon`}
+					height={38}
+					src={`/icons/weather/${weatherIconMap[icon]}.svg`}
+					width={38}
+				/>
 			</div>
 		</div>
 	);

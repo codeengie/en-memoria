@@ -2,7 +2,7 @@
 
 import styles from './PhotoFrame.module.scss';
 import Image from 'next/image';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import DateDisplay from '@/components/date-display/DateDisplay';
 import ClockDisplay from '@/components/clock-display/ClockDisplay';
@@ -11,6 +11,7 @@ import WeatherDisplay from '@/components/weather-display/WeatherDisplay';
 const PhotoFrame = () => {
 	const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 	const [photos, setPhotos] = useState([]);
+	const city = process.env.NEXT_PUBLIC_API_LOCATION_CITY;
 
 	// Fetch photos
 	useEffect(() => {
@@ -80,7 +81,7 @@ const PhotoFrame = () => {
 			<div className={styles.widget}>
 				<DateDisplay className={styles.widget__date} />
 				<WeatherDisplay className={styles.widget__weather} />
-				<div className={styles.widget__location}>Compton</div>
+				<div className={styles.widget__location}>{city}</div>
 				<ClockDisplay className={styles.widget__time} />
 			</div>
 		</div>
