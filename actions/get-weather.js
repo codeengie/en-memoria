@@ -36,9 +36,9 @@ export const getWeather = async () => {
 
 		const data = await response.json();
 		return {
-			currentTemp: data.current.temperature_2m,
-			currentUnit: data.current_units.temperature_2m,
-			weatherCode: data.current.weather_code
+			temp: data.current.temperature_2m,
+			unit: data.current_units.temperature_2m,
+			code: data.current.weather_code
 		};
 	} catch (error) {
 		console.error('Error fetching weather data', error);

@@ -38,33 +38,39 @@ const weatherIconMap = {
 };
 
 const WeatherDisplay = ({ ...props }) => {
-	const [temp, setTemp] = useState(null);
-	const [icon, setIcon] = useState(null);
+	const [weather, setWeather] = useState(null);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		const fetchTemp = async () => {
-			const temp = await getWeather();
-
-			if (temp) {
-				setTemp(
-					`${Math.round(temp.currentTemp)}${temp.currentUnit.toLowerCase()}`
-				);
-				setIcon(temp.weatherCode);
+		const fetchWeather = async () => {
+			try {
+				const data = await getWeather();
+				setWeather(data);
+			} catch (error) {
+				setError('Failed to fetch weather data. Please restart.');
+				setWeather(null);
 			}
 		};
 
-		fetchTemp();
+		fetchWeather();
 	}, []);
+
+	if (error) {
+		return <div>Error: {error}</div>;
+	}
+
+	if (!weather) {
+		return <div>Loading...</div>;
+	}
 
 	return (
 		<div {...props}>
-			<div>{temp}</div>
+			<div>{`${Math.round(weather.temp)}${weather.unit.toLowerCase()}`}</div>
 			<div>
-				{/*The conditional I added is causing this not to render, @todo Fix*/}
 				<Image
-					alt={`A ${weatherIconMap[icon]} weather icon`}
+					alt={`A ${weatherIconMap[weather.code]} weather icon`}
 					height={38}
-					src={`/icons/weather/${weatherIconMap[icon]}.svg`}
+					src={`/icons/weather/${weatherIconMap[weather.code]}.svg`}
 					width={38}
 				/>
 			</div>
