@@ -43,10 +43,7 @@ const WeatherDisplay = ({ ...props }) => {
 
 	useEffect(() => {
 		const fetchTemp = async () => {
-			const latitude = process.env.NEXT_PUBLIC_API_LOCATION_LATITUDE;
-			const longitude = process.env.NEXT_PUBLIC_API_LOCATION_LONGITUDE;
-
-			const temp = await getWeather(latitude, longitude);
+			const temp = await getWeather();
 
 			if (temp) {
 				setTemp(
