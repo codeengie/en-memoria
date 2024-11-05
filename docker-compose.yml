@@ -1,13 +1,12 @@
-version: '3'
 services:
     en-memoria:
         build: .
         ports:
             - "3000:3000"
         environment:
-            - NEXT_PUBLIC_API_LOCATION_CITY=Compton
-            - NEXT_PUBLIC_API_LOCATION_LATITUDE=33.8959
-            - NEXT_PUBLIC_API_LOCATION_LONGITUDE=-118.2201
+            - LOCATION_LATITUDE=33.8959
+            - LOCATION_LONGITUDE=-118.2201
+            - NEXT_PUBLIC_LOCATION_CITY=Compton
             - PHOTO_DIRECTORY=/app/photos
         volumes:
-            - ${HOST_PHOTO_DIR}:/app/photos
+            - G:/syncthing/photos:/app/photos

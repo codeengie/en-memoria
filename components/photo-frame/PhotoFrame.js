@@ -11,7 +11,7 @@ import WeatherDisplay from '@/components/weather-display/WeatherDisplay';
 const PhotoFrame = () => {
 	const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 	const [photos, setPhotos] = useState([]);
-	const city = process.env.NEXT_PUBLIC_API_LOCATION_CITY;
+	const city = process.env.NEXT_PUBLIC_LOCATION_CITY;
 
 	// Fetch photos
 	useEffect(() => {

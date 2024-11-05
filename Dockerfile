@@ -13,6 +13,10 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Create and add client side environment variables
+ARG NEXT_PUBLIC_LOCATION_CITY
+ENV NEXT_PUBLIC_LOCATION_CITY=Compton
+
 # Build the Next.js app
 RUN npm run build
 
