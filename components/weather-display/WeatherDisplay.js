@@ -1,6 +1,7 @@
 import { getWeather } from '@/actions/get-weather';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { getCoordinates } from '@/actions/get-coordinates';
 
 /**
  * Based of Open-Meteo WMD Weather interpretation codes (WW)
@@ -44,7 +45,11 @@ const WeatherDisplay = ({ ...props }) => {
 	useEffect(() => {
 		const fetchWeather = async () => {
 			try {
-				const data = await getWeather();
+				const coordinates = await getCoordinates();
+				const data = await getWeather(
+					coordinates.latitude,
+					coordinates.longitude
+				);
 				setWeather(data);
 			} catch (error) {
 				setError('Failed to fetch weather data. Please restart.');
