@@ -1,10 +1,11 @@
 import fs from 'fs';
+import path from 'path';
 
 // Reads a directory in order to generate a list of photos
 export const GET = async (req) => {
 	try {
 		const photoDirectory = process.env.PHOTO_DIRECTORY;
-		const photoExtensions = ['jpg', 'jpeg', 'png'];
+		const photoExtensions = ['.jpg', '.jpeg', '.png'];
 
 		if (!photoDirectory) {
 			return new Response(
@@ -18,15 +19,19 @@ export const GET = async (req) => {
 			);
 		}
 
-		// Read directory
+		// Read directory, this returns an array of files and folders
 		const files = await fs.readdirSync(photoDirectory);
 
-		// Remove photos with unsupported extensions
-		const photoFiles = files.filter((file) =>
-			photoExtensions.some((extensions) =>
-				extensions.endsWith(extensions)
-			)
-		);
+		const photoFiles = files.filter((file) => {
+			// Join paths
+			const fullPath = path.join(photoDirectory, file);
+			// Get file information
+			const stat = fs.statSync(fullPath);
+			// Get the file extension of the file path
+			const extension = path.extname(file).toLowerCase();
+			// Check if image is a file and includes supported extension
+			return stat.isFile() && photoExtensions.includes(extension);
+		});
 
 		return new Response(JSON.stringify({ photoFiles }), {
 			status: 200,

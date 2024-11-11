@@ -41,7 +41,7 @@ const PhotoFrame = () => {
 			setCurrentPhotoIndex(
 				(prevIndex) => (prevIndex + 1) % photos.length
 			);
-		}, 10000);
+		}, 120000);
 
 		return () => clearInterval(interval);
 	}, [photos]);
