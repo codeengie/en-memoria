@@ -1,15 +1,10 @@
 import localFont from 'next/font/local';
 import './globals.scss';
 
-const geistSans = localFont({
-	src: './fonts/GeistVF.woff',
-	variable: '--font-geist-sans',
-	weight: '100 900'
-});
-const geistMono = localFont({
-	src: './fonts/GeistMonoVF.woff',
-	variable: '--font-geist-mono',
-	weight: '100 900'
+const montserratSemi = localFont({
+	src: './fonts/MontserratSemiBold.woff',
+	variable: '--font-montserrat-semi',
+	weight: '600'
 });
 
 export const metadata = {
@@ -21,9 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				{children}
-			</body>
+			<body className={montserratSemi.variable}>{children}</body>
 		</html>
 	);
 }
